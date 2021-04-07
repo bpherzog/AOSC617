@@ -37,7 +37,7 @@ merra2jjav850=tregr(count2*jja2,v850,t=1,t=492)*120
 
 close 1
 
-open /export/aosc/horse/carton/atmosphere2/ERA5.1980-2020_mo.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere2/ERA5.1980-2020_mo.ctl
 /homes/metofac/carton/colors
 
 
@@ -139,7 +139,7 @@ draw title U850
 
 
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -148,7 +148,7 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DIFF DJF U TREND 1980-2020
 draw string 6 10.5 DIFF JJA U TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/era5_zonalvel_diff.pdf
+gxprint SAVE_DIR/era5_zonalvel_diff.pdf
 
 
 
@@ -225,7 +225,7 @@ draw title V850
 
 
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -234,4 +234,4 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DIFF DJF V TREND 1980-2020
 draw string 6 10.5 DIFF JJA V TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/era5_meridvel_diff.pdf
+gxprint SAVE_DIR/era5_meridvel_diff.pdf

@@ -37,7 +37,7 @@ merra2jjaq850=tregr(count2*jja2,q850,t=1,t=492)*1000*120
 
 close 1
 
-open /export/aosc/horse/carton/atmosphere2/ERA5.1980-2020_mo.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere2/ERA5.1980-2020_mo.ctl
 /homes/metofac/carton/colors
 
 set lev 250 250
@@ -135,7 +135,7 @@ set ylopts 1 3 .14
 d merra2jjat850-era5jjat850
 draw title T850
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -144,7 +144,7 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DIFF DJF TEMP TREND 1980-2020 
 draw string 6 10.5 DIFF JJA TEMP TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/temp_trend_diff.pdf
+gxprint SAVE_DIR/temp_trend_diff.pdf
 
 
 
@@ -216,7 +216,7 @@ d merra2jjaq850-era5jjaq850
 draw title q850
 
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -226,4 +226,4 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DIFF DJF Q TREND 1980-2020
 draw string 6 10.5 DIFF JJA Q TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/ERA5_trends/diff_spechumid_trend.pdf
+gxprint SAVE_DIR/diff_spechumid_trend.pdf

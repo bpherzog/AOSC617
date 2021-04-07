@@ -14,7 +14,7 @@ open /homes/metofac/carton/classes/aosc617/atmosphere/jja.ctl
 set t 1 492
 jja2 = jja
 close 1
-open /export/aosc/horse/carton/atmosphere2/ERA5.1980-2020_mo.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere2/ERA5.1980-2020_mo.ctl
 /homes/metofac/carton/colors
 
 
@@ -157,7 +157,7 @@ draw title U850
 
 
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -166,6 +166,6 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 ERA5 DJF U TREND 1980-2020
 draw string 6 10.5 ERA5 JJA U TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/ERA5_trends/era5_zonalvel_trend.pdf
+gxprint SAVE_DIR/era5_zonalvel_trend.pdf
 u.exec.txt
 Displaying u.exec.txt.

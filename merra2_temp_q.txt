@@ -1,15 +1,15 @@
 reinit
 set display color white
 c
-open count.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere/count.ctl
 set t 1 492
 count2 = count
 close 1
-open djf.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere/djf.ctl
 set t 1 492
 djf2 = djf
 close 1
-open jja.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere/jja.ctl
 set t 1 492
 jja2 = jja
 close 1
@@ -108,7 +108,7 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DJF TEMP TREND 1980-2020
 draw string 6 10.5 JJA TEMP TREND 1980-2020
-gxprint /aosc/horse/carton/merra2_temp_trend.pdf
+gxprint SAVE_DIR/merra2_temp_trend.pdf
 c
 
 set t 1
@@ -202,4 +202,4 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 DJF Q TREND 1980-2020
 draw string 6 10.5 JJA Q TREND 1980-2020
-gxprint /aosc/horse/carton/merra2_spechumid_trend.pdf
+gxprint SAVE_DIR/merra2_spechumid_trend.pdf

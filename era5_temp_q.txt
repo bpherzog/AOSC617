@@ -14,7 +14,7 @@ open /homes/metofac/carton/classes/aosc617/atmosphere/jja.ctl
 set t 1 492
 jja2 = jja
 close 1
-open /export/aosc/horse/carton/atmosphere2/ERA5.1980-2020_mo.ctl
+open /homes/metofac/carton/classes/aosc617/atmosphere2/ERA5.1980-2020_mo.ctl
 /homes/metofac/carton/colors
 
 
@@ -89,7 +89,7 @@ set lev 850 850
 d tregr(count2*jja2,temp,t=1,t=492)*120
 draw title T850
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -98,7 +98,7 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 ERA5 DJF TEMP TREND 1980-2020 
 draw string 6 10.5 ERA5 JJA TEMP TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/ERA5_trends/era5_temp_trend.pdf
+gxprint SAVE_DIR/era5_temp_trend.pdf
 
 c
 set t 1
@@ -172,7 +172,7 @@ d tregr(count2*jja2,q,t=1,t=492)*1000*120
 draw title q850
 
 
-/aosc/doldrums/bherzog/atmosphere/cbarn
+/homes/metofac/chepurin/GRADS/GS/cbarn
 set vpage off
 set strsiz .07
 set string 1 l 4 0
@@ -181,7 +181,7 @@ set strsiz .12
 set string 1 c 4 0
 draw string 2 10.5 ERA5 DJF Q TREND 1980-2020
 draw string 6 10.5 ERA5 JJA Q TREND 1980-2020
-gxprint /aosc/doldrums/bherzog/ERA5_trends/era5_spechumid_trend.pdf
+gxprint SAVE_DIR/era5_spechumid_trend.pdf
 
 temp-q.exec.txt
 Displaying temp-q.exec.txt.
