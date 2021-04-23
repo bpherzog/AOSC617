@@ -1,0 +1,75 @@
+reinit
+set display color white
+c
+open /homes/metofac/carton/classes/aosc617/atmosphere/count.ctl
+set t 1 492
+count2 = count
+close 1
+open /homes/metofac/carton/classes/aosc617/atmosphere/djf.ctl
+set t 1 492
+djf2 = djf
+close 1
+open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
+jja2=jja
+close 1
+open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
+jja2=jja
+close 1
+open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
+jfm2=jfm
+close 1
+open /homes/metofac/carton/classes/aosc617/atmosphere/jja.ctl
+set t 1 492
+jja2 = jja
+close 1
+
+open /data/studentdata/AOSC617/classes/aosc617/seaice/icec.mnmean.ctl
+
+set t 2 457
+icecUnpacked=icec*0.01+327.65
+
+set t 2 13
+set lat 40 90
+set mproj nps
+
+
+
+icecavg=ave(icecUnpacked,t+0,t=457,12)
+set t 2 457
+modify icecavg seasonal
+
+set t 1
+djfice=ave(icecavg,t=13, t=15)
+mamice=ave(icecavg,t=4, t=6)
+jjaice=ave(icecavg,t=7, t=9)
+jfmice=ave(icecavg,t=2, t=4)
+
+close 1
+open /data/studentdata/AOSC617/classes/aosc617/atmosphere/tavgM_2d_slv_Nx.ctl
+/homes/metofac/carton/colors
+
+
+
+set t 1 492
+set lat 40 90
+set mproj nps
+set gxout shaded
+
+set t 1
+set rbcols 49 47 45 43 42 0 62 63 65 67 69
+djfT2mtrend=120*tregr(djf2*count2,T2M,t=1, t=492)
+d djfT2mtrend
+/homes/metofac/chepurin/GRADS/GS/cbarn 
+
+
+set gxout contour
+set clevs 15
+set ccols 1
+set cthick 12
+set clab off
+set cstyle 1
+d djfice
+
+
+
+
