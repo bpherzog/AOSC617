@@ -5,22 +5,14 @@ open /homes/metofac/carton/classes/aosc617/atmosphere/count.ctl
 set t 1 492
 count2 = count
 close 1
-open /homes/metofac/carton/classes/aosc617/atmosphere/djf.ctl
+
+open /data/studentdata/AOSC617/classes/aosc617/monthseasoncount1980.ctl
 set t 1 492
-djf2 = djf
-close 1
-open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
+apr2=apr
 jja2=jja
-close 1
-open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
-jja2=jja
-close 1
-open /data/studentdata/AOSC617/classes/aosc617/atmosphere/jja.ctl
-jfm2=jfm
-close 1
-open /homes/metofac/carton/classes/aosc617/atmosphere/jja.ctl
-set t 1 492
-jja2 = jja
+mam2=mam
+djf2=djf
+son2=son
 close 1
 
 open /data/studentdata/AOSC617/classes/aosc617/seaice/icec.mnmean.ctl
@@ -50,15 +42,18 @@ open /data/studentdata/AOSC617/classes/aosc617/atmosphere/tavgM_2d_slv_Nx.ctl
 
 
 
+set vpage 0 4 7.5 10.5
 set t 1 492
 set lat 40 90
 set mproj nps
 set gxout shaded
 
 set t 1
-set rbcols 49 47 45 43 42 0 62 63 65 67 69
+set clevs -2 -1.5 01 -0.5 0 0.5 1 1.5 2 2.5
+set ccols 49 47 45 43 42 0 62 63 65 67 69
 djfT2mtrend=120*tregr(djf2*count2,T2M,t=1, t=492)
 d djfT2mtrend
+draw title DJF
 /homes/metofac/chepurin/GRADS/GS/cbarn 
 
 
@@ -72,4 +67,83 @@ d djfice
 
 
 
+
+set vpage 0 4 5 8
+set gxout shaded
+set t 1
+set clevs -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5
+set ccols 49 47 45 43 42 0 62 63 65 67 69
+mamT2mtrend=120*tregr(mam2*count2,T2M,t=1, t=492)
+d mamT2mtrend
+draw title MAM
+/homes/metofac/chepurin/GRADS/GS/cbarn 
+
+
+set gxout contour
+set clevs 15
+set ccols 1
+set cthick 12
+set clab off
+set cstyle 1
+d mamice
+
+
+set vpage 0 4 2.5 5.5
+set gxout shaded
+set t 1
+set clevs -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5
+set ccols 49 47 45 43 42 0 62 63 65 67 69
+jjaT2mtrend=120*tregr(jja2*count2,T2M,t=1, t=492)
+d jjaT2mtrend
+draw title JJA
+/homes/metofac/chepurin/GRADS/GS/cbarn 
+
+
+set gxout contour
+set clevs 15
+set ccols 1
+set cthick 12
+set clab off
+set cstyle 1
+d jjaice
+
+
+set vpage 0 4 0 3
+set gxout shaded
+set t 1
+set clevs -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5
+set ccols 49 47 45 43 42 0 62 63 65 67 69
+sonT2mtrend=120*tregr(son2*count2,T2M,t=1, t=492)
+d sonT2mtrend
+draw title SON
+/homes/metofac/chepurin/GRADS/GS/cbarn 
+
+
+set gxout contour
+set clevs 15
+set ccols 1
+set cthick 12
+set clab off
+set cstyle 1
+d sonice
+
+
+set vpage 4 8 7.5 10.5
+set gxout shaded
+set t 1
+set clevs -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5
+set ccols 49 47 45 43 42 0 62 63 65 67 69
+aprT2mtrend=120*tregr(apr2*count2,T2M,t=1, t=492)
+d aprT2mtrend
+draw title APRIL
+/homes/metofac/chepurin/GRADS/GS/cbarn 
+
+
+set gxout contour
+set clevs 15
+set ccols 1
+set cthick 12
+set clab off
+set cstyle 1
+d aprice
 
